@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
 html, body {
     height: 100%;
     margin: 0;
@@ -24,11 +26,37 @@ body {
 }
 
 .top-bar {
-    position: absolute;
-    width: 100%;
+    font-family: 'Space Grotesk', sans-serif;
+    position: sticky;
+    top: 20px;
+    width: 90%;
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 0 20px;
+
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+
     backdrop-filter: blur(10px);
-    background-color: rgba(0, 0, 0, 25);
-    color: #fff;
-    display: flex;
-    justify-content: space-evenly;
+    background-color: rgba(255, 255, 255, 0.01);
+    color: #101212;
+
+    border-radius: 50px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.top-bar p:first-child {
+    justify-self: start;
+}
+
+.top-bar h2 {
+    margin: 0;
+    font-size: 1.5em;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.top-bar p:last-child {
+    justify-self: end;
 }
