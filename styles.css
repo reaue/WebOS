@@ -23,7 +23,7 @@ body {
     transform: translate(-50%, -50%);
 }
 
-.top-bar {
+#top-bar {
     position: absolute;
     width: 100%;
     backdrop-filter: blur(10px);
