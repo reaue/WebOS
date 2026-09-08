@@ -33,7 +33,12 @@ function dragElement (element) {
     function startDragging(e) {
         e = e || window.event;
 
-        if (e.target.tagName === "TEXTAREA") {
+        if (
+            e.target.tagName === "TEXTAREA" ||
+            e.target.tagName === "BUTTON" ||
+            e.target.tagName === "INPUT" ||
+            e.target.tagName === "A"
+        ) {
             return;
         }
 
@@ -146,4 +151,36 @@ window.addEventListener("DOMContentLoaded", () => {
 
 noteInput.addEventListener("input", () => {
     localStorage.setItem("spaceos-note", noteInput.value);
+});
+
+
+const rpsButtons = document.querySelectorAll(".rps-buttons button");
+const result = document.getElementById("result");
+const score = document.getElementById("score");
+
+const choices = ["rock", "paper", "scissors"];
+
+let playerScore = 0;
+let computerScore = 0;
+
+rpsButtons.forEach((button, index) => {
+    button.addEventListener("click", () => {
+        const player = choices[index];
+        const computer = choices[Math.floor(Math.random() * 3)];
+
+        if (player === computer) {
+            result.textContent = "Draw !";
+        } else if (
+            (player === "rock" && computer === "scissors") ||
+            (player === "paper" && computer === "rock") ||
+            (player === "scissors" && computer === "paper")
+        ) {
+            result.textContent = "You win !";
+            playerScore++;
+        } else {
+            result.textContent = "You lose !";
+            computerScore++;
+        }
+        score.textContent = `You : ${playerScore} | Computer : ${computerScore}`;
+    });
 });
