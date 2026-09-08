@@ -29,6 +29,11 @@ function dragElement (element) {
     // Step 6: Define the `startDragging` function to capture the initial mouse position and set up event listeners.
     function startDragging(e) {
         e = e || window.event;
+
+        if (e.target.tagName === "TEXTAREA") {
+            return;
+        }
+
         e.preventDefault();
         // Step 7: Get the mouse cursor position at startup.
         initialX = e.clientX;
@@ -113,3 +118,17 @@ function openWindow (element) {
     topBar.style.zIndex = biggestIndex + 1;
     bottomBar.style.zIndex = biggestIndex + 1;
 };
+
+
+const noteInput = document.getElementById("note-input");
+const savedNote = localStorage.getItem("spaceos-note")
+
+window.addEventListener("DOMContentLoaded", () => {
+    if (savedNote) {
+        noteInput.value = savedNote;
+    }
+});
+
+noteInput.addEventListener("input", () => {
+    localStorage.setItem("spaceos-note", noteInput.value)
+});
