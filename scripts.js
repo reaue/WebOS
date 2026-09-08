@@ -16,6 +16,9 @@ dragElement(welcomeScreen);
 let noteScreen = document.getElementById("note");
 dragElement(noteScreen);
 
+let rpsScreen = document.getElementById("rpss");
+dragElement(rpsScreen);
+
 function dragElement (element) {
     let initialX = 0;
     let initialY = 0;
@@ -90,6 +93,17 @@ NoteScreenOpen.addEventListener("click", () => {
     openWindow(noteScreen);
 });
 
+let rpsScreenClose = document.getElementById("rpss-close");
+let rpsScreenOpen = document.getElementById("rpss-open");
+
+rpsScreenClose.addEventListener("click", () => {
+    closeWindow(rpsScreen);
+});
+
+rpsScreenOpen.addEventListener("click", () => {
+    openWindow(rpsScreen);
+});
+
 
 let biggestIndex = 1;
 let topBar = document.getElementById("top-bar")
@@ -101,8 +115,9 @@ function addWindowTapHandling (element) {
 });
 };
 
-addWindowTapHandling(welcomeScreen)
-addWindowTapHandling(noteScreen)
+addWindowTapHandling(welcomeScreen);
+addWindowTapHandling(noteScreen);
+addWindowTapHandling(rpsScreen);
 
 function handleWindowTap (element) {
     biggestIndex++;
@@ -121,7 +136,7 @@ function openWindow (element) {
 
 
 const noteInput = document.getElementById("note-input");
-const savedNote = localStorage.getItem("spaceos-note")
+const savedNote = localStorage.getItem("spaceos-note");
 
 window.addEventListener("DOMContentLoaded", () => {
     if (savedNote) {
@@ -130,5 +145,5 @@ window.addEventListener("DOMContentLoaded", () => {
 });
 
 noteInput.addEventListener("input", () => {
-    localStorage.setItem("spaceos-note", noteInput.value)
+    localStorage.setItem("spaceos-note", noteInput.value);
 });
