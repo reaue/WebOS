@@ -2,7 +2,7 @@
 
 A personal OS based on a space theme, with apps such as Notes and Rock Paper Scissors.
 
-![SpaceOS screenshot](<images/Capture d'écran 2026-09-08 114547.png>)
+![SpaceOS screenshot](<images/Capture d'écran 2026-09-08 121056.png>)
 
 # Demo
 
