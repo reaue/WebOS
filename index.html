@@ -10,14 +10,35 @@
   </head>
 
   <body>
-    <div class="top-bar">
-        <p id="date"></p>
-        <h2>SpaceOS</h2>
-        <p id="hour"></p>
+    <div id="welcome" class="window">
+      <div id="welcomeheader"></div>
+      <button id="welcome-close" class="close">x</button>
+      <p>This my OS based on a space style because I like space things like rockets, planets, stars,... You can find all the source code of this beautiful OS on <a href="https://github.com/reaue/WebOS">GitHub</a>.
+      </p>
     </div>
-    
-    <div class="window">
+    <div id="note" class="window" style="display: none;">
+      <div id="noteheader"></div>
+      <button id="note-close" class="close">x</button>
+      <p>text</p>
+    </div>
 
+    <div class="bar" id="top-bar">
+      <p id="date"></p>
+      <h2>SpaceOS</h2>
+      <p id="hour"></p>
+    </div>
+    <div class="bar" id="bottom-bar">
+      <div class="logo">
+        <div class="logo-button">
+          <img src="images/home_icon.svg" id="welcome-open" alt="WelcomeApp">
+          <span id="welcomeapp">WelcomeApp</span>
+        </div>
+
+        <div class="logo-button">
+          <img src="images/note_icon.svg" id="note-open" alt="Note">
+          <span id="noteapp">Note</span>
+        </div>
+      </div>
     </div>
     <script src="scripts.js"></script>
   </body>
